@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+.env
+
+# Data directories & Output CSVs (Strictly Excluded)
+data/
+data/raw/
+data/processed/
+reports/*.csv
+*.csv
+*.parquet
+*.feather
+*.h5
+*.pkl
+
+# Models & Weights
+models/*.joblib
+models/*.parquet
+models/*.pkl
+models/*.bin
+models/*.pt
+models/*.pth
+!models/.gitkeep
+
+# MLflow & Experiment Tracking
+mlruns/
+mlflow.db
+mlflow.db-journal
+
+# Testing & Logs
+.pytest_cache/
+.coverage
+htmlcov/
+logs/
+*.log
+
+# Scratch / Temp directories
+scratch/
+.agents/
+.ipynb_checkpoints/
+.system_generated/
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db

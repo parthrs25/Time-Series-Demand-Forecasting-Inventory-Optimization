@@ -1,0 +1,15 @@
+.venv
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.coverage
+htmlcov
+mlruns
+data/raw/*.csv
+data/processed/*.parquet
+models/*.joblib
+reports/figures/*.png

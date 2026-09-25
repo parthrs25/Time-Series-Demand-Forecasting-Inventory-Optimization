@@ -1,0 +1,56 @@
+[
+  {
+    "Hierarchy Level":"Level_0_National",
+    "Series Count":1,
+    "Total Volume":1183626,
+    "Naive WAPE (%)":5.76,
+    "LightGBM WAPE (%)":4.23,
+    "WAPE Reduction (%)":1.54,
+    "LightGBM RMSE":2076.497
+  },
+  {
+    "Hierarchy Level":"Level_1_State",
+    "Series Count":3,
+    "Total Volume":1183626,
+    "Naive WAPE (%)":6.99,
+    "LightGBM WAPE (%)":5.31,
+    "WAPE Reduction (%)":1.68,
+    "LightGBM RMSE":922.301
+  },
+  {
+    "Hierarchy Level":"Level_2_Store",
+    "Series Count":10,
+    "Total Volume":1183626,
+    "Naive WAPE (%)":8.48,
+    "LightGBM WAPE (%)":6.47,
+    "WAPE Reduction (%)":2.01,
+    "LightGBM RMSE":347.705
+  },
+  {
+    "Hierarchy Level":"Level_3_Cat_Store",
+    "Series Count":30,
+    "Total Volume":1183626,
+    "Naive WAPE (%)":10.59,
+    "LightGBM WAPE (%)":8.17,
+    "WAPE Reduction (%)":2.42,
+    "LightGBM RMSE":171.511
+  },
+  {
+    "Hierarchy Level":"Level_4_Dept_Store",
+    "Series Count":70,
+    "Total Volume":1183626,
+    "Naive WAPE (%)":12.59,
+    "LightGBM WAPE (%)":9.77,
+    "WAPE Reduction (%)":2.82,
+    "LightGBM RMSE":91.268
+  },
+  {
+    "Hierarchy Level":"Level_5_Item_Store",
+    "Series Count":30490,
+    "Total Volume":1183626,
+    "Naive WAPE (%)":90.74,
+    "LightGBM WAPE (%)":75.05,
+    "WAPE Reduction (%)":15.69,
+    "LightGBM RMSE":2.105
+  }
+]

@@ -1,0 +1,25 @@
+# Core Data Science & Time Series
+numpy>=1.23.0
+pandas>=1.4.0
+scipy>=1.9.0
+pyarrow>=10.0.0
+tabulate>=0.9.0
+
+# Machine Learning & Optimization
+scikit-learn>=1.1.0
+lightgbm>=3.3.0
+xgboost>=1.7.0
+catboost>=1.2.0
+optuna>=3.0.0
+
+# MLOps & Experiment Tracking
+mlflow>=2.0.0
+pyyaml>=6.0
+
+# Web Application & Visualization
+streamlit>=1.25.0
+plotly>=5.10.0
+pillow>=9.0.0
+
+# Testing & Quality
+pytest>=7.0.0

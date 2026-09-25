@@ -1,0 +1,46 @@
+name: MLOps Continuous Deployment (CD) Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*.*.*' ]
+
+jobs:
+  model-evaluation-and-deployment:
+    name: Evaluate & Deploy Model Artifact
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+        cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Execute Full MLOps Pipeline
+      run: |
+        python run_pipeline.py --stage all
+
+    - name: Verify Model Evaluation Metrics
+      run: |
+        python -c "
+        import json
+        with open('reports/metrics_summary.json') as f:
+            metrics = json.load(f)
+        lgb_wape = [m['LightGBM WAPE (%)'] for m in metrics if m['Hierarchy Level'] == 'Level_5_Item_Store'][0]
+        print(f'Item SKU Level WAPE: {lgb_wape}%')
+        assert lgb_wape < 85.0, f'Deployment Quality Gate Failed: WAPE {lgb_wape}% exceeds 85% threshold'
+        print('✅ Model Quality Gate Passed successfully!')
+        "
+
+    - name: Build Production Docker Image
+      run: |
+        docker build -t retail-demand-forecaster:latest .
